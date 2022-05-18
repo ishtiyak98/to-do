@@ -9,7 +9,7 @@ const Login = () => {
 
   let location = useLocation();
   let navigate = useNavigate();
-  let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/home";
 
   useEffect(() => {
     if (user) {
@@ -17,7 +17,7 @@ const Login = () => {
       toast.success("successfully logged in");
       navigate(from, { replace: true });
     }
-  }, [user, navigate]);
+  }, [user, from, navigate]);
 
   return (
     <>
